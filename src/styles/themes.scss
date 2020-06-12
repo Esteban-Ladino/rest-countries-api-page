@@ -1,0 +1,32 @@
+$themes: (
+  light: (
+    backgroundColor: hsl(0, 0%, 98%),
+    textColor: hsl(200, 15%, 8%),
+    inputColor: hsl(0, 0%, 52%),
+    elementColor: hsl(0, 0%, 100%)
+  ),
+  dark: (
+    backgroundColor: hsl(207, 26%, 17%),
+    textColor: hsl(0, 0%, 100%),
+    inputColor: hsl(0, 0%, 52%),
+    elementColor: hsl(209, 23%, 22%)
+  )
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
