@@ -1,6 +1,8 @@
 @import './variables.scss';
 @import './themes.scss';
 @import './components/Header.scss';
+@import './components/Main.scss';
 @import './components/Countries.scss';
 @import './components/Country.scss';
-@import './components/Main.scss';
+@import './containers/CountryDetail.scss';
+@import './containers/NotFound.scss';
