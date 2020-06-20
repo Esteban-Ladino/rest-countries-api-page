@@ -1,13 +1,36 @@
 import React from 'react'
+import { Link } from '@reach/router'
+import { useNearScreen } from '../hooks/useNearScreen'
 
-export const Country = () => {
+export const Country = (props) => {
+  const [show, ref] = useNearScreen()
+
+  const {
+    name,
+    population,
+    region,
+    capital,
+    flag
+  } = props
+
   return (
-    <div>
-      <img src='https://restcountries.eu/data/bra.svg' alt='Country image' />
-      Brazil
-      <p><strong>Population: </strong>206.135.893</p>
-      <p><strong>Region: </strong>Americas</p>
-      <p><strong>Capital: </strong>Brasília</p>
-    </div>
+    <Link to={`/detail/${name}`}>
+      <div className='card' ref={ref}>
+        {
+          show &&
+            <>
+              <figure className='card__image'>
+                <img src={flag} alt={`${name} flag`} />
+              </figure>
+              <div className='card__details'>
+                <h4 className='card__details__title'>{name}</h4>
+                <p><strong>Population: </strong>{population}</p>
+                <p><strong>Region: </strong>{region}</p>
+                <p><strong>Capital: </strong>{capital}</p>
+              </div>
+            </>
+        }
+      </div>
+    </Link>
   )
 }
