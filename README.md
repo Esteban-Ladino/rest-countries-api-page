@@ -3,7 +3,7 @@ This is the REST Countries API with color theme switcher coding challenge by [Fr
 Created using ReactJS
 
 ## Demo
-If you want to see the demo of this project deployed, you can visit it here
+If you want to see the demo of this project deployed, you can visit it [here](https://loving-dubinsky-9b7d47.netlify.app/)
 
 ## How to clone
 You can clone the repository
