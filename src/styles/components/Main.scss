@@ -14,20 +14,29 @@
     border-radius: 5px;
     @include themify($themes) {
       background-color: themed('elementColor');
-      color: themed('inputColor');
+      color: themed('textColor');
     }
 
-    -webkit-box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
-    -moz-box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
-    box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
+    -webkit-box-shadow: 0px 1px 10px 0px #17171740;
+    -moz-box-shadow: 0px 1px 10px 0px #17171740;
+    box-shadow: 0px 1px 10px 0px #17171740;
     & input {
+      padding: 0;
       border: none;
       margin-left: 25px;
+      outline: none;
+      font-size: 1rem;
+      background: transparent;
+      @include themify($themes) {
+        color: themed('textColor');
+      }
     }
     ::placeholder {
       font-size: .78rem;
+      border: none;
       @include themify($themes) {
-        color: themed('inputColor');
+        background: themed('elementColor');
+        color: themed('textColor');
       }
     }
   }
@@ -37,11 +46,17 @@
     padding: 15px 55px 15px 25px;
     border: none;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
-    -moz-box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
-    box-shadow: 0px 2px 3px 0px rgba(232,232,232,1);
+    -webkit-box-shadow: 0px 1px 10px 0px #17171740;
+    -moz-box-shadow: 0px 1px 10px 0px #17171740;
+    box-shadow: 0px 1px 10px 0px #17171740;
+    outline: none;
     @include themify($themes) {
       background-color: themed('elementColor');
+      color: themed('textColor');
+    }
+
+    & .filter__option--disabled {
+      display: none;
     }
   }
 
